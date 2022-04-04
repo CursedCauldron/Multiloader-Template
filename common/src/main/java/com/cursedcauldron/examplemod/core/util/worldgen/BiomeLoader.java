@@ -1,9 +1,7 @@
 package com.cursedcauldron.examplemod.core.util.worldgen;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import net.minecraft.data.worldgen.placement.NetherPlacements;
 import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.levelgen.GenerationStep;
 
 //<>
 
@@ -29,9 +27,9 @@ public class BiomeLoader {
      * @return checks if it should generate the features or not (useful for configs)
      */
     public static boolean test(BiomeWriter writer) {
-        writer.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, NetherPlacements.DELTA);
-        writer.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, NetherPlacements.SMALL_BASALT_COLUMNS);
-        writer.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, NetherPlacements.LARGE_BASALT_COLUMNS);
+//        writer.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, NetherPlacements.DELTA);
+//        writer.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, NetherPlacements.SMALL_BASALT_COLUMNS);
+//        writer.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, NetherPlacements.LARGE_BASALT_COLUMNS);
         return true;
     }
 }
