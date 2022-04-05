@@ -13,7 +13,9 @@ public class BiomeLoader {
     public static final BiomeLoader INSTANCE = new BiomeLoader();
 
     @ExpectPlatform
-    public static void bootstrap() {}
+    public static void bootstrap() {
+        throw new AssertionError();
+    }
 
     /**
      * @param writer adds features to specific biomes or categories

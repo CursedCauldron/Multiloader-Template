@@ -1,6 +1,5 @@
 package com.cursedcauldron.examplemod.core.util.worldgen;
 
-import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -15,11 +14,6 @@ import java.util.function.Predicate;
 //<>
 
 public abstract class BiomeWriter {
-    @ExpectPlatform
-    public static BiomeWriter create() {
-        throw new AssertionError();
-    }
-
     @SafeVarargs
     public final void add(Predicate<BiomeWriter> factory, ResourceKey<Biome>... biomes) {
         for (ResourceKey<Biome> biome : biomes) {
