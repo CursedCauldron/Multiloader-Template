@@ -1,11 +1,10 @@
 package com.cursedcauldron.examplemod.core.util.client;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.world.entity.Entity;
@@ -13,7 +12,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 //<>
 
@@ -29,12 +28,7 @@ public class RenderManager {
     }
 
     @ExpectPlatform
-    public static <T extends Entity> void setEntityRenderer(Supplier<? extends EntityType<? extends T>> entityType, EntityRendererProvider<T> factory) {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
-    public static void setEntityModelLayer(ModelLayerLocation location, Supplier<LayerDefinition> definition) {
+    public static <T extends Entity> void setEntityRenderer(EntityType<T> type, Function<EntityRenderDispatcher, EntityRenderer<T>> factory) {
         throw new AssertionError();
     }
 

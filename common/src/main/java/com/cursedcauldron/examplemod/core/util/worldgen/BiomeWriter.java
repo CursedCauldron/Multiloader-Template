@@ -7,7 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 import java.util.function.Predicate;
 
@@ -47,7 +47,7 @@ public abstract class BiomeWriter {
 
     public abstract ResourceLocation getName();
 
-    public abstract void addFeature(GenerationStep.Decoration step, PlacedFeature feature);
+    public abstract void addFeature(GenerationStep.Decoration step, ConfiguredFeature<?, ?> feature);
 
     public abstract void addSpawn(MobCategory category, EntityType<?> entityType, int weight, int minGroupSize, int maxGroupSize);
 }

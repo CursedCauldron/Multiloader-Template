@@ -7,17 +7,13 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 //<>
 
 public class BiomeWriterImpl extends BiomeWriter {
     private BiomeLoadingEvent event;
-
-    public static BiomeWriter create() {
-        return new BiomeWriterImpl();
-    }
 
     public BiomeWriter build(BiomeLoadingEvent event) {
         this.event = event;
@@ -35,7 +31,7 @@ public class BiomeWriterImpl extends BiomeWriter {
     }
 
     @Override
-    public void addFeature(GenerationStep.Decoration step, PlacedFeature feature) {
+    public void addFeature(GenerationStep.Decoration step, ConfiguredFeature<?, ?> feature) {
         this.event.getGeneration().addFeature(step, feature);
     }
 
