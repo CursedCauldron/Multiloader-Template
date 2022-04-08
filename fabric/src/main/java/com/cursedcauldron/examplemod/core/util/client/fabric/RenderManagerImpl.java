@@ -29,7 +29,7 @@ public class RenderManagerImpl {
         BlockRenderLayerMap.INSTANCE.putFluids(type, fluids);
     }
 
-    public static <T extends Entity> void setEntityRenderer(Supplier<? extends EntityType<T>> entityType, EntityRendererProvider<T> factory) {
+    public static <T extends Entity> void setEntityRenderer(Supplier<? extends EntityType<? extends T>> entityType, EntityRendererProvider<T> factory) {
         EntityRendererRegistry.register(entityType.get(), factory);
     }
 

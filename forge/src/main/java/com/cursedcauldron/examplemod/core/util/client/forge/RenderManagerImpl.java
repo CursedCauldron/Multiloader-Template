@@ -43,8 +43,8 @@ public class RenderManagerImpl {
     }
 
     @SuppressWarnings("all")
-    public static <T extends Entity> void setEntityRenderer(Supplier<? extends EntityType<T>> entityType, EntityRendererProvider<T> factory) {
-        ENTITY_RENDERERS.put((Supplier<EntityType<?>>)entityType, factory);
+    public static <T extends Entity> void setEntityRenderer(Supplier<? extends EntityType<? extends T>> entityType, EntityRendererProvider<T> factory) {
+        ENTITY_RENDERERS.put((Supplier<EntityType<?>>)(Supplier<? extends EntityType<?>>)entityType, factory);
     }
 
     public static void setEntityModelLayer(ModelLayerLocation location, Supplier<LayerDefinition> definition) {

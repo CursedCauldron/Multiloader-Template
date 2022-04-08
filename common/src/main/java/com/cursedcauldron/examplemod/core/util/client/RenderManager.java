@@ -3,7 +3,6 @@ package com.cursedcauldron.examplemod.core.util.client;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
-import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -30,7 +29,7 @@ public class RenderManager {
     }
 
     @ExpectPlatform
-    public static <T extends Entity> void setEntityRenderer(Supplier<? extends EntityType<T>> entityType, EntityRendererProvider<T> factory) {
+    public static <T extends Entity> void setEntityRenderer(Supplier<? extends EntityType<? extends T>> entityType, EntityRendererProvider<T> factory) {
         throw new AssertionError();
     }
 
